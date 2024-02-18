@@ -1,0 +1,24 @@
+from tensorflow import keras
+from MLmodel.Feature_Extractor import extract_features
+
+
+# ------------------------------------------------------------------------
+
+# This function takes the url and returns probability value
+model_path = r"C:/Users/jeyes/OneDrive/Documents/DESIGN-PROJECT/FINAL YEAR/Camillo-API/MLmodel/models/Malicious_URL_Prediction.h5"
+
+def get_prediction(url):
+    print("Loading the model...")
+    model = keras.models.load_model(model_path)
+
+    print("Extracting features from url...")
+    url_features = extract_features(url)
+    print(url_features)
+
+    print("Making prediction...")
+    prediction = model.predict([url_features])
+
+    i = prediction[0][0] * 100
+    i = round(i,3)
+
+    return i
