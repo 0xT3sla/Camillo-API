@@ -5,7 +5,7 @@ from MLmodel.Feature_Extractor import extract_features
 # ------------------------------------------------------------------------
 
 # This function takes the url and returns probability value
-model_path = r"C:/Users/jeyes/OneDrive/Documents/Github/Camillo-API/MLmodel/models/Malicious_URL_Prediction.h5"
+model_path = r"C:/Users/jeyes/OneDrive/Documents/DESIGN-PROJECT/FINAL YEAR/Camillo-API/MLmodel/models/Malicious_URL_Prediction.h5"
 
 def get_prediction(url):
     print("Loading the model...")
