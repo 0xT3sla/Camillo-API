@@ -21,6 +21,6 @@ tldextract==3.4.0
 urllib3==1.26.15
 Werkzeug==2.2.3
 zipp==3.15.0
-tensorflow==2.7
+tensorflow
 regex
 colorama
