@@ -39,9 +39,8 @@ def validate_url(url):
     try:
         response = requests.get(url)
         return response.status_code
-
     except requests.exceptions.RequestException:
-        return False
+        return False  # or any default value you prefer
 
 def include_protocol(url):
     try:
@@ -199,10 +198,10 @@ def url_redirects(url):
                 url_history.append(resp.url)
             return url_history
         else:
-            return 0
+            return []  # Return an empty list when there are no redirects
     except Exception as e:
         # print(f"Error: {e}")
-        return 
+        return [] 
 
 # check whether the URL is too long 
 def too_long_url(url):

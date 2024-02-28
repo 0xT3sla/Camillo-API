@@ -3,8 +3,6 @@ import controller
 import base64
 import os
 import colorama
-
-
 app = Flask(__name__)
 
 def clear_screen():
@@ -26,6 +24,7 @@ def banner(api_url):
     print(banner_text)
     print(colorama.Fore.GREEN + "App is running!" + colorama.Style.RESET_ALL)
     print("Send POST requests to: " + colorama.Fore.BLUE + f"{api_url}"+ colorama.Style.RESET_ALL)
+
 
 @app.route('/api/analyze-url', methods=['POST'])
 def analyze_url():

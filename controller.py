@@ -2,7 +2,7 @@ from urllib.parse import urlparse, urlencode, quote, unquote
 import tldextract
 import model
 import googleVerify
-
+import cscore
 global BASE_SCORE
 BASE_SCORE = 50  # default trust_ score of url out of 100
 
@@ -124,7 +124,11 @@ def main(url):
 
         #==================== google api verify section ends here ============================= #
          
-
+        # ================== starting combine .py ===============================#
+        final_verdict = cscore.is_phishing(trust_score,model_score)
+        if google_verification_result == "yes":
+            final_verdict = True
+        response['final_verdict'] = final_verdict
 
         return response
 
