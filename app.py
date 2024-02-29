@@ -1,10 +1,11 @@
 from flask import Flask, request, jsonify
 import controller
 import base64
+from flask_cors import CORS
 import os
 import colorama
 app = Flask(__name__)
-
+CORS(app)  # Enable CORS for all routes
 def clear_screen():
   # Using os.system to execute clear command
   os.system('clear' if os.name == 'posix' else 'cls')
