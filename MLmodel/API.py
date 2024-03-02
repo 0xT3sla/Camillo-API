@@ -1,11 +1,14 @@
 from tensorflow import keras
 from MLmodel.Feature_Extractor import extract_features
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 # ------------------------------------------------------------------------
 
 # This function takes the url and returns probability value
-model_path = r"C:/Users/jeyes/OneDrive/Documents/DESIGN-PROJECT/FINAL YEAR/Camillo-API/MLmodel/models/Malicious_URL_Prediction.h5"
+model_path = os.getenv("MODEL_PATH")
 
 def get_prediction(url):
     print("Loading the model...")
