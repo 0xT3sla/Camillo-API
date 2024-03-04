@@ -20,7 +20,7 @@ def get_prediction(url):
 
     print("Making prediction...")
     prediction = model.predict([url_features])
-
+    print(prediction)
     i = prediction[0][0] * 100
     i = round(i,3)
 

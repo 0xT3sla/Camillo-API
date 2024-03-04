@@ -13,13 +13,13 @@ def is_phishing(trust_score,model_score):
     upper_limit = 90 
     lower_limit = 30
     
-    if trust_score <= lower_limit:
-        return True
+    if model_score <= lower_limit:
+        return False
     elif model_score >= upper_limit:
         return True
+    elif trust_score <= lower_limit:
+        return True
     elif trust_score >= upper_limit:
-        return False
-    elif model_score <= lower_limit:
         return False
     else:
         combined_score = combine_scores(trust_score, model_score)
